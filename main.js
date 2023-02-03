@@ -1,18 +1,19 @@
-const gameBoard = document.querySelector("#game-board");
-const resultP = document.querySelector("#result");
-const treasure = document.querySelector("#treasure");
+const treasure = document.getElementById("treasure");
+const result = document.getElementById("result");
+
+treasure.addEventListener("click", function() {
+  result.textContent = "Congratulations!";
+  result.classList.add("bold");
+});
 
 gameBoard.addEventListener("click", function(event) {
-  const clickX = event.clientX - gameBoard.offsetLeft;
-  const clickY = event.clientY - gameBoard.offsetTop;
-
-  const tolerance = 50;
-  const treasureX = treasure.offsetLeft + treasure.offsetWidth;
-  const treasureY = treasure.offsetTop;
-  const distance = Math.sqrt(Math.pow(treasureX - clickX, 2) + Math.pow(treasureY - clickY, 2));
-  if (distance < tolerance) {
-    resultP.textContent = "You found the treasure! Congratulations!";
+  const distance = calculateDistance(event, treasure);
+  if (distance < 20) {
+    treasure.style.backgroundColor = "green";
+    result.textContent = "Congratulations!";
+    result.classList.add("bold");
   } else {
-    resultP.textContent = "Try again.";
+    result.textContent = "Try Again";
+    result.classList.add("bold");
   }
 });
