@@ -1,21 +1,30 @@
-const treasure = document.getElementById("treasure");
-const result = document.getElementById("result");
+const album = [
+  {
+    id: 1,
+    url: 'roma.jpg',
+  },
+  /*
+  {
+    id: 2,
+    url: 'https://via.placeholder.com/600x400/7fff7f/ffffff?text=2',
+  },
+  {
+    id: 3,
+    url: 'https://via.placeholder.com/600x400/7f7fff/ffffff?text=3',
+  },
+  */
+  // Add more photos to the album here...
+];
 
+const albumContainer = document.querySelector('#photo-album');
 
-
-treasure.addEventListener("click", function() {
-  result.textContent = "Congratulations!";
-  result.classList.add("bold");
-});
-
-gameBoard.addEventListener("click", function(event) {
-  const distance = calculateDistance(event, treasure);
-  if (distance < 20) {
-    treasure.style.backgroundColor = "green";
-    result.textContent = "Congratulations!";
-    result.classList.add("bold");
-  } else {
-    result.textContent = "Try Again";
-    result.classList.add("bold");
-  }
+album.forEach(photo => {
+  const photoElement = document.createElement('div');
+  photoElement.classList.add('photo-thumbnail');
+  photoElement.style.backgroundImage = `url(${photo.url})`;
+  photoElement.addEventListener('click', () => {
+    // Show full-size photo on click
+    // ...
+  });
+  albumContainer.appendChild(photoElement);
 });
