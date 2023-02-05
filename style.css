@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* (A) WHOLE PAGE */
 * { box-sizing: border-box; }
 body { background: #eee; }
@@ -29,7 +28,7 @@ body { background: #eee; }
 
   /* (C3) IMAGE RESIZE */
   /* cover | contain | fill | scale-down */
-  object-fit: contain;
+  object-fit: scale-down;
   position: relative;
 }
 
@@ -59,39 +58,4 @@ body { background: #eee; }
 .gallery img.full:hover {
   z-index: 999;
   transform: none;
-=======
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
-.album-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-}
-
-.photo-thumbnail {
-  width: calc(33.33% - 40px);
-  height: 200px;
-  margin: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: pointer;
-}
-
-@media (max-width: 767px) {
-  .photo-thumbnail {
-    width: calc(50% - 40px);
-  }
-}
-
-@media (max-width: 500px) {
-  .photo-thumbnail {
-    width: 100%;
-  }
->>>>>>> cdb0ca105925a3366d0c5badb62f69d1e6abb9b1
 }
