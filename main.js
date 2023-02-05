@@ -1,6 +1,8 @@
 const treasure = document.getElementById("treasure");
 const result = document.getElementById("result");
 
+
+
 treasure.addEventListener("click", function() {
   result.textContent = "Congratulations!";
   result.classList.add("bold");
